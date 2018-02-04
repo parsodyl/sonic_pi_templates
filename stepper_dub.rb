@@ -74,26 +74,26 @@ live_loop :bass do
   #sync :dub
   #stop
   use_synth :square
-  4.times do
+  8.times do
     play :e2, amp: rrand(1.5,2), cutoff: 55, release: 0.85
-    sleep 1
+    sleep 0.5
   end
-  4.times do
+  8.times do
     play :b1, amp: rrand(1.5,2), cutoff: 55, release: 0.85
-    sleep 1
+    sleep 0.5
   end
 end
 
 live_loop :melody do
   #sync :dub
-  stop
+  #stop
   use_synth_defaults amp: 0.5
   with_synth :piano do
-    with_fx :reverb, amp: 0.75 do
+    with_fx :reverb, amp: 0.85 do
       with_fx :slicer, phase: 0.75, wave: 3, mix: 0.75 do
         with_fx :echo, phase: 0.250, decay: 3, max_phase: 4, mix: 0.5 do
-          play_pattern_timed (scale :e4, :aeolian).shuffle, [0.25], amp: 1.5, pan: -0.4
-          play_pattern_timed (scale :b3, :aeolian).shuffle, [0.25], amp: 1.5, pan: +0.4
+          play_pattern_timed (scale :e4, :aeolian).shuffle, [0.5], amp: 1.5, pan: -0.4
+          play_pattern_timed (scale :b3, :aeolian).shuffle, [0.5], amp: 1.5, pan: +0.4
         end
       end
     end

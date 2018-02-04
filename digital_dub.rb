@@ -1,15 +1,15 @@
 live_loop :skank do
   with_synth :prophet do
-    with_fx :reverb, amp: 2 do
-      with_fx :echo, phase: 0.75, max_phase: 2, decay: 1, mix: 0.1 do
+    with_fx :reverb, amp: 3 do
+      with_fx :echo, phase: 0.75, max_phase: 2, decay: 1, mix: 0.4 do
         3.times do
           sleep 0.5
-          play_chord chord(:e4, :minor), amp: 2, cutoff: 85, release: 0.20
+          play_chord chord(:e4, :minor), amp: 0.6, cutoff: 85, release: 0.20
           sleep 0.5
         end
         1.times do
           sleep 0.5
-          play_chord chord(:b3, :minor), amp: 2, cutoff: 85, release: 0.20
+          play_chord chord(:b3, :minor), amp: 0.6, cutoff: 85, release: 0.20
           sleep 0.5
         end
       end
@@ -18,15 +18,17 @@ live_loop :skank do
 end
 
 live_loop :chiptune do
+  #sync :skank
+  #stop
   with_synth :chipbass do
-    play chord(:e4, :minor)[0], amp: rrand(0.06, 0.09)*1.4
-    sleep 0.25
-    play chord(:e3, :minor)[0], amp: rrand(0.06, 0.09)*1.4
-    sleep 0.25
-    play chord(:e4, :minor)[1], amp: rrand(0.06, 0.09)*1.4
-    sleep 0.25
-    play chord(:e3, :minor)[2], amp: rrand(0.06, 0.09)*1.4
-    sleep 0.25
+    play chord(:e4, :minor)[0], amp: rrand(0.06, 0.09)*1.5
+    sleep 0.250
+    play chord(:e3, :minor)[0], amp: rrand(0.06, 0.09)*1.5
+    sleep 0.250
+    play chord(:e4, :minor)[1], amp: rrand(0.06, 0.09)*1.5
+    sleep 0.250
+    play chord(:e3, :minor)[2], amp: rrand(0.06, 0.09)*1.5
+    sleep 0.250
   end
 end
 
@@ -36,8 +38,8 @@ live_loop :beat do
   sample :bd_klub, amp: 1
   sample :bd_tek, amp: 1
   sleep 1-0.125
-  sample :bd_klub, amp: 0.7
-  sample :bd_tek, amp: 0.7
+  #sample :bd_klub, amp: 0.7
+  #sample :bd_tek, amp: 0.7
   sleep 0.125
   sample :sn_zome, amp: 1
   sample :bd_tek, amp: 1

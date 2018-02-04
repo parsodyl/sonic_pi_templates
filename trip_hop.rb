@@ -33,35 +33,36 @@ live_loop :strings do
   with_synth :prophet do
     with_fx(:reverb, room: 0.9, mix: 0.4) do
       #sync :bass
-      stop
-      play :C5, amp: 0.5, release: 0.5
+      #stop
+      play :C5, amp: 0.5, release: 0.5, cutoff: 75+5
       sleep 0.5
-      play :As4, amp: 0.5, release: 0.5
+      play :As4, amp: 0.5, release: 0.5, cutoff: 75+5
       sleep 0.5
-      play :Gs4, amp: 0.5, release: 0.5
+      play :Gs4, amp: 0.5, release: 0.5, cutoff: 75+5
       sleep 0.5
-      play :Eb4, amp: 0.5, release: 0.5
+      play :Eb4, amp: 0.5, release: 0.5, cutoff: 75+5
       sleep 0.5
     end
   end
 end
 
 live_loop :beat do
+  use_bpm 68*2
   #sync :bass
-  stop
+  #stop
+  sample :bd_klub, amp: 2
+  sample :bd_tek, amp: 2
+  sleep 2
+  sample :sn_dolf, amp: 1.5, cutoff: 110
+  sleep 2
+  sample :bd_klub, amp: 2
+  sample :bd_tek, amp: 2
+  sleep 1
   sample :bd_klub, amp: 2
   sample :bd_tek, amp: 2
   sleep 1
   sample :sn_dolf, amp: 1.5, cutoff: 110
-  sleep 1
-  sample :bd_klub, amp: 2
-  sample :bd_tek, amp: 2
-  sleep 0.5
-  sample :bd_klub, amp: 2
-  sample :bd_tek, amp: 2
-  sleep 0.5
-  sample :sn_dolf, amp: 1.5, cutoff: 110
-  sleep 1-0.25
+  sleep 2-0.25
   sample :bd_klub, amp: 0.65
   sample :bd_tek, amp: 0.65
   sleep 0.25
