@@ -21,13 +21,13 @@ live_loop :chiptune do
   #sync :skank
   #stop
   with_synth :chipbass do
-    play chord(:e4, :minor)[0], amp: rrand(0.06, 0.09)*1.5
+    play chord(:e4, :minor)[0], amp: rrand(0.06, 0.09)*1.8
     sleep 0.250
-    play chord(:e3, :minor)[0], amp: rrand(0.06, 0.09)*1.5
+    play chord(:e3, :minor)[0], amp: rrand(0.06, 0.09)*1.8
     sleep 0.250
-    play chord(:e4, :minor)[1], amp: rrand(0.06, 0.09)*1.5
+    play chord(:e4, :minor)[1], amp: rrand(0.06, 0.09)*1.8
     sleep 0.250
-    play chord(:e3, :minor)[2], amp: rrand(0.06, 0.09)*1.5
+    play chord(:e3, :minor)[2], amp: rrand(0.06, 0.09)*1.8
     sleep 0.250
   end
 end
@@ -38,8 +38,8 @@ live_loop :beat do
   sample :bd_klub, amp: 1
   sample :bd_tek, amp: 1
   sleep 1-0.125
-  #sample :bd_klub, amp: 0.7
-  #sample :bd_tek, amp: 0.7
+  sample :bd_klub, amp: 0.7
+  sample :bd_tek, amp: 0.7
   sleep 0.125
   sample :sn_zome, amp: 1
   sample :bd_tek, amp: 1
