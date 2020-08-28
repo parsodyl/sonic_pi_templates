@@ -23,16 +23,16 @@ live_loop :dub2 do
   #sync :dub
   #stop
   with_synth :chiplead do
-    with_fx :reverb, amp: 3.5 do
+    with_fx :reverb, amp: 2 do
       with_fx :echo, phase: 0.25, decay: 3, max_phase: 4, mix: 0.1 do
         4.times do
           sleep 0.5
-          play_chord chord(:e4, :minor), release: 0.25
+          play_chord chord(:e4, :minor), cutoff: 90, release: 0.25
           sleep 0.5
         end
         4.times do
           sleep 0.5
-          play_chord chord(:b3, :minor), release: 0.25
+          play_chord chord(:b3, :minor), cutoff: 90, release: 0.25
           sleep 0.5
         end
       end
@@ -74,13 +74,29 @@ live_loop :bass do
   #sync :dub
   #stop
   use_synth :square
-  8.times do
+  2.times do
     play :e2, amp: rrand(1.5,2), cutoff: 55, release: 0.85
     sleep 0.5
+    play :e2, amp: rrand(1.5,2), cutoff: 55, release: 0.85
+    sleep 0.5
+    play :e2, amp: rrand(1.5,2), cutoff: 55, release: 0.85
+    sleep 0.5
+    play :e2, amp: rrand(1.5,2), cutoff: 55, release: 0.35
+    sleep 0.25
+    play :e2, amp: rrand(1.5,2), cutoff: 55, release: 0.35
+    sleep 0.25
   end
-  8.times do
+  2.times do
     play :b1, amp: rrand(1.5,2), cutoff: 55, release: 0.85
     sleep 0.5
+    play :b1, amp: rrand(1.5,2), cutoff: 55, release: 0.85
+    sleep 0.5
+    play :b1, amp: rrand(1.5,2), cutoff: 55, release: 0.85
+    sleep 0.5
+    play :b1, amp: rrand(1.5,2), cutoff: 55, release: 0.35
+    sleep 0.25
+    play :b1, amp: rrand(1.5,2), cutoff: 55, release: 0.35
+    sleep 0.25
   end
 end
 
